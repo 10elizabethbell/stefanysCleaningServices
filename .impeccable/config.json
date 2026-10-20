@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-10-20T11:39:48.307Z",
         "reason": "Ellie's house calm band style (calm-photo-style.md item 2, set 2026-10-19) requires the faint 135deg line texture on deep bands"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T11:45:40.932Z",
+        "reason": "False positive: detector counts only fixed small sizes; clamp() display sizes (H1 42-80px, h2 30-48px) over 16px body give the hierarchy, confirmed by the Impeccable typeset/audit sweep 2026-10-20"
       }
     ]
   }
