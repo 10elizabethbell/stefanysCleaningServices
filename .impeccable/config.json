@@ -20,6 +20,42 @@
         ],
         "createdAt": "2026-10-20T11:45:40.932Z",
         "reason": "False positive: detector counts only fixed small sizes; clamp() display sizes (H1 42-80px, h2 30-48px) over 16px body give the hierarchy, confirmed by the Impeccable typeset/audit sweep 2026-10-20"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "6px",
+        "createdAt": "2026-10-20T11:49:44.386Z",
+        "reason": "Focus-ring corner radius; Intentional one-off recorded as excluded in DESIGN.md (documenter, 2026-10-20)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "20px",
+        "createdAt": "2026-10-20T11:49:44.450Z",
+        "reason": "Promise/step/number sizes at the 20px step; Intentional one-off recorded as excluded in DESIGN.md (documenter, 2026-10-20)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#0866ff",
+        "createdAt": "2026-10-20T11:49:44.514Z",
+        "reason": "Facebook brand blue on the Facebook icon; Intentional one-off recorded as excluded in DESIGN.md (documenter, 2026-10-20)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#55657a",
+        "createdAt": "2026-10-20T11:49:44.578Z",
+        "reason": "Placeholder text colour, 5:1 on field fill; Intentional one-off recorded as excluded in DESIGN.md (documenter, 2026-10-20)"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "16px",
+        "createdAt": "2026-10-20T11:49:44.643Z",
+        "reason": "Nested sent-message box inside the 24px form card; Intentional one-off recorded as excluded in DESIGN.md (documenter, 2026-10-20)"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "24px",
+        "createdAt": "2026-10-20T11:49:49.073Z",
+        "reason": "Desktop wordmark size in the header; intentional one-off not in the DESIGN.md ramp"
       }
     ]
   }
