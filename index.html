@@ -90,7 +90,7 @@ section{padding:64px 0}
 .brand img{width:54px;height:39px;flex:none}
 .brand .nm{display:flex;flex-direction:column;justify-content:center}
 .brand b{font:400 21px/1 var(--display);letter-spacing:.01em}
-.brand .nm>span{font:600 11px/1 var(--text);letter-spacing:.08em;white-space:nowrap;text-transform:uppercase;color:var(--soft);margin-top:5px}
+.brand .nm>span{font:600 12px/1 var(--text);letter-spacing:.06em;white-space:nowrap;text-transform:uppercase;color:var(--soft);margin-top:5px}
 .tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 2px;font:400 17px/1 var(--display);text-decoration:none;white-space:nowrap}
 .tel svg{width:18px;height:18px;flex:none;color:var(--green-ink)}
 
@@ -98,17 +98,18 @@ section{padding:64px 0}
 .hero{padding:0;position:relative;background-color:var(--navy);background-image:var(--texture);color:var(--on-dark);overflow:hidden}
 .logo-card.hero-logo{display:none}
 .hero-copy{position:relative;z-index:1;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:68px}
-.hero h1{color:#fff;font-size:clamp(42px,12vw,80px);line-height:1.02;max-width:12ch}
+.hero h1{color:#fff;font-size:clamp(42px,min(12vw,15svh),80px);line-height:1.02;max-width:12ch}
 /* H1 bounce-in (after lpmr.co.uk): each letter slides in from 50px right with a slight overshoot, 20ms apart */
 .hero h1 .w{display:inline-block;white-space:nowrap}
 .hero h1 .c{display:inline-block;opacity:0;transform:translateX(50px);animation:letter-in 1s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--i) * 20ms)}
 @keyframes letter-in{to{opacity:1;transform:none}}
+.hero h1.wait{opacity:0}
 .promise{font-size:clamp(17px,4.7vw,20px);line-height:1.5;color:var(--on-dark-soft);max-width:32ch}
 .actions{display:grid;gap:12px;width:100%;margin-top:4px}
 
 /* ---------- Care ---------- */
 .care .lede{margin-top:16px}
-.fb{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:14px 16px 14px 22px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none;font:400 clamp(18px,5vw,21px)/1.2 var(--display);max-width:460px;box-shadow:0 8px 24px rgba(11,42,74,.07)}
+.fb{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:14px 16px 14px 22px;border-radius:var(--r-card);background:var(--card);color:var(--ink);text-decoration:none;font:400 clamp(18px,5vw,21px)/1.2 var(--display);max-width:460px;box-shadow:0 8px 24px rgba(11,42,74,.07)}
 .fb:hover,.fb:focus-visible{outline:none;background:var(--card)}
 .fb .lbl{display:flex;align-items:center;gap:14px}
 .fb .lbl svg{width:30px;height:30px;flex:none;color:#0866ff}
@@ -125,12 +126,12 @@ section{padding:64px 0}
 .row:focus-visible .arrow{background:var(--green);color:var(--ink);outline:3px solid var(--green);outline-offset:3px}
 
 /* ---------- How it works ---------- */
-.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
+.steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
 .steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;counter-increment:s}
 .steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--ink);font:400 20px/1 var(--display)}
-.steps b{display:block;font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
-.steps span{display:block;margin-top:4px}
-.fall .lede{margin-top:16px}
+.steps b{display:block;font:400 20px/1.2 var(--display);color:var(--ink);margin-top:2px}
+.steps span{display:block;margin-top:4px;color:var(--soft)}
+.close .eyebrow{margin-bottom:16px}
 
 /* ---------- Form ---------- */
 .ask .wrap{display:grid;gap:28px}
@@ -168,6 +169,7 @@ form .btn-primary:focus-visible{outline:3px solid var(--focus);outline-offset:3p
 .close .who{margin-top:14px;font-size:clamp(18px,5vw,20px);color:var(--on-dark-soft);max-width:34ch}
 .logo-card{width:min(220px,58vw);aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center}
 .logo-card img{width:70%;height:auto}
+@media (max-width:759px){.close .logo-card{width:160px}}
 .bigmsg{display:inline-flex;align-items:center;gap:12px;margin-top:24px;font:400 clamp(24px,7vw,36px)/1.1 var(--display);text-decoration:none;color:var(--on-dark);min-height:56px}
 .bigmsg svg{width:.95em;height:.95em;flex:none;color:var(--green)}
 
@@ -186,6 +188,8 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
 /* ---------- Motion: one fade-up, only for things below the first screen ---------- */
 .js .rise{transition:opacity .4s ease-out,transform .4s ease-out}
 .js .rise.below{opacity:0;transform:translateY(12px)}
+@media print{.js .rise.below{opacity:1;transform:none}.float{display:none}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ---------- Desktop ---------- */
 @media (min-width:760px){
@@ -201,16 +205,12 @@ footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-d
   .actions .btn{min-width:230px}
 }
 @media (min-width:1024px){
-  .logo-card.hero-logo{display:grid;position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);width:clamp(260px,26vw,340px)}
-  .care .wrap{display:grid;grid-template-columns:1.1fr 1fr;column-gap:64px;align-items:end}
-  .care .fb{margin-top:0;justify-self:end;width:100%}
+  .logo-card.hero-logo{display:grid;position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);width:clamp(200px,18vw,250px)}
   .svc .wrap{display:grid;grid-template-columns:1fr 1.2fr;column-gap:64px;align-items:start}
   .svc .rows{margin-top:0}
   .ask .wrap{grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
   .ask .head{position:sticky;top:40px}
   .close .wrap{grid-template-columns:1fr auto;gap:48px;align-items:center}
-  .how .steps{grid-template-columns:repeat(3,1fr);gap:40px}
-  .steps b{font-size:22px}
 }
 /* hover styles only where there is a real pointer, so taps don't leave them stuck on */
 @media (hover:hover){
@@ -236,7 +236,8 @@ footer a:hover{color:var(--green)}
 <!--
 THESIS: A Facebook-only Maplewood cleaning business gets a calm, clean home on the web: one promise (a fresh start for your Maplewood home), the three kinds of cleaning, and one easy way to ask for a quote on Messenger.
 OWN-WORLD: The logo's own colours on the calm band system: off-white paper, logo blue deepened to #0a5196 and deep #0b2a4a (faint diagonal lines), the logo's leaf green #8cc63f as the one accent (fills only; #3d6a10 as text on light). Cal Sans display, system body 16/1.7. The logo's arc-and-tools mark in the header, the full logo on a white circle in the close.
-STORY: The visitor sees who cleans homes in Maplewood, feels the care in the owner's own seasonal words, picks the kind of cleaning, and sends a ready-written Messenger message.
+STORY: The visitor sees who cleans homes in Maplewood, feels the care in the owner's own words, picks the kind of cleaning, sends a ready-written Messenger message, and leaves on the owner's seasonal hook ("Fall calls for extra care").
+BANDS: navy hero, paper care, navy services, paper quote (with the three steps), navy close, deep textured footer. The full logo sits on a white circle in the close, and beside the H1 on desktop to fill the empty half of the hero.
 FIRST VIEWPORT: Paper header with mark + wordmark. Navy textured hero: eyebrow "Fall cleaning", H1 "A fresh start for your Maplewood home.", the owner's promise from their own ad, two pill buttons (Ask for a quote, Message us).
 FORM: calm band system without photos (no real work photos exist; the flyer's bathroom is a template image).
 -->
@@ -271,11 +272,11 @@ FORM: calm band system without photos (no real work photos exist; the flyer's ba
 <section class="on-paper care" aria-labelledby="h-care">
   <div class="wrap">
     <div class="rise">
-      <h2 id="h-care">We clean your home like it's <span class="accent">our own.</span></h2>
+      <h2 id="h-care">We clean your home like it's our own.</h2>
       <p class="lede">You're trusting us with the place you come home to. We give every room extra attention, so you get more comfort, freshness and peace of mind every day.</p>
     </div>
     <a class="fb rise" href="https://www.facebook.com/stefanycleaningservices/" rel="noopener">
-      <span class="lbl"><svg aria-hidden="true"><use href="#i-fb"/></svg>Click to see more of our work</span>
+      <span class="lbl"><svg aria-hidden="true"><use href="#i-fb"/></svg>See us on Facebook</span>
       <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
     </a>
   </div>
@@ -288,38 +289,29 @@ FORM: calm band system without photos (no real work photos exist; the flyer's ba
       <h2 id="h-svc">Every room, <span class="accent">done with care.</span></h2>
     </div>
     <ul class="rows">
-      <li class="rise"><a class="row" href="#ask" data-pick="Home cleaning">Home cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
-      <li class="rise"><a class="row" href="#ask" data-pick="Deep cleaning">Deep cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
-      <li class="rise"><a class="row" href="#ask" data-pick="Seasonal cleaning">Seasonal cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-pick="Home cleaning">Home cleaning<span class="sr">, ask for a quote</span><span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-pick="Deep cleaning">Deep cleaning<span class="sr">, ask for a quote</span><span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-pick="Seasonal cleaning">Seasonal cleaning<span class="sr">, ask for a quote</span><span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
     </ul>
-  </div>
-</section>
-
-<section class="on-deep how fall" aria-labelledby="h-how">
-  <div class="wrap">
-    <div class="rise">
-      <h2 id="h-how">Fall calls for <span class="accent">extra care.</span></h2>
-      <p class="lede">As the seasons change, give your home the fresh start it deserves.</p>
-    </div>
-    <ol class="steps">
-      <li class="rise"><div><b>Send us a message.</b><span>Tell us about your home and what it needs.</span></div></li>
-      <li class="rise"><div><b>We set a day together.</b><span>One that works around your week.</span></div></li>
-      <li class="rise"><div><b>Come home to clean.</b><span>Fresh, organized and ready to enjoy.</span></div></li>
-    </ol>
   </div>
 </section>
 
 <section class="on-paper ask" id="ask" aria-labelledby="h-ask">
   <div class="wrap">
     <div class="head rise">
-      <p class="eyebrow">Free to ask</p>
+      <p class="eyebrow">On Messenger</p>
       <h2 id="h-ask">Ask for a quote</h2>
       <p class="lede">Big house or small apartment, tell us what you need.</p>
+      <ol class="steps">
+        <li><div><b>Send us a message.</b><span>Tell us about your home and what it needs.</span></div></li>
+        <li><div><b>We agree on a day.</b><span>Pick it together with us over Messenger.</span></div></li>
+        <li><div><b>Come home to a clean house.</b><span>Fresh, organized and ready to enjoy.</span></div></li>
+      </ol>
     </div>
-    <form id="quoteForm" class="rise" novalidate>
+    <form id="quoteForm" class="rise" action="https://m.me/stefanycleaningservices" method="get" novalidate>
       <div class="field" id="f-name">
         <label for="name">Your name</label>
-        <input type="text" id="name" name="name" autocomplete="name" maxlength="60" placeholder="First name is fine" aria-describedby="e-name">
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="60" placeholder="First name is fine">
         <p class="err" id="e-name">Add your name so we know who's writing.</p>
       </div>
       <fieldset class="field">
@@ -348,7 +340,7 @@ FORM: calm band system without photos (no real work photos exist; the flyer's ba
           <a class="btn btn-small" id="openBtn" href="https://m.me/stefanycleaningservices" rel="noopener">Open Messenger</a>
         </div>
       </div>
-      <p class="after" id="afterLine">Opens Messenger with your message written out.</p>
+      <p class="after" id="afterLine">Opens Messenger. We copy your message too, so you can paste it in.</p>
     </form>
   </div>
 </section>
@@ -356,8 +348,9 @@ FORM: calm band system without photos (no real work photos exist; the flyer's ba
 <section class="on-navy close" id="close" aria-labelledby="h-close">
   <div class="wrap">
     <div class="rise">
-      <h2 id="h-close">Stefany's Cleaning Services LLC</h2>
-      <p class="who">Home cleaning based in Maplewood, NJ. Nearby and not sure we come to you? Ask us.</p>
+      <p class="eyebrow">Stefany's Cleaning Services LLC</p>
+      <h2 id="h-close">Fall calls for <span class="accent">extra care.</span></h2>
+      <p class="who">A clean and organized space makes all the difference. We're based in Maplewood, NJ. Nearby and not sure we come to you? Ask us.</p>
       <a class="bigmsg" data-contact data-msg="Hi Stefany's Cleaning Services! I found your website and I'd like to ask about a cleaning." href="https://m.me/stefanycleaningservices" rel="noopener"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
     </div>
     <div class="logo-card rise"><img src="img/logo.webp" alt="Stefany's Cleaning Services LLC logo" width="440" height="440" loading="lazy"></div>
@@ -367,7 +360,7 @@ FORM: calm band system without photos (no real work photos exist; the flyer's ba
 
 <footer>
   <div class="wrap">
-    <span>Stefany's Cleaning Services LLC · Maplewood, NJ<span id="footTel"></span></span>
+    <span>Stefany's Cleaning Services LLC · Maplewood,&nbsp;NJ<span id="footTel"></span></span>
     <nav aria-label="Contact">
       <a href="https://www.facebook.com/stefanycleaningservices/" rel="noopener">Facebook</a>
       <a id="footMail" hidden></a>
@@ -417,6 +410,7 @@ var Contact = (function(){
   if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var plain=h.innerHTML,i=0,last=null;
   h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());
+  h.classList.add('wait');
   function split(node,into){
     [].slice.call(node.childNodes).forEach(function(n){
       if(n.nodeType===3){
@@ -430,9 +424,14 @@ var Contact = (function(){
       }else if(n.nodeType===1){var copy=n.cloneNode(false);split(n,copy);into.appendChild(copy)}
     });
   }
-  var frag=document.createDocumentFragment();split(h,frag);h.textContent='';h.appendChild(frag);
-  // once the last letter lands, put the plain heading back so kerning and text selection return
-  if(last)last.addEventListener('animationend',function(){h.innerHTML=plain;h.removeAttribute('aria-label')});
+  function run(){
+    var frag=document.createDocumentFragment();split(h,frag);h.textContent='';h.appendChild(frag);h.classList.remove('wait');
+    // once the last letter lands, put the plain heading back so kerning and text selection return
+    if(last)last.addEventListener('animationend',function(){h.innerHTML=plain;h.removeAttribute('aria-label')});
+  }
+  // wait for Cal Sans (600ms at most) so the font swap can't jolt letters mid-bounce
+  var ready=document.fonts&&document.fonts.load?document.fonts.load('1em "Cal Sans"'):Promise.resolve();
+  Promise.race([ready,new Promise(function(r){setTimeout(r,600)})]).then(run,run);
 })();
 
 /* ===== Service rows pre-pick their chip in the form ===== */
@@ -450,8 +449,13 @@ var Contact = (function(){
   var form=document.getElementById('quoteForm');if(!form)return;
   var sent=document.getElementById('sent'),pre=document.getElementById('sentMsg'),head=document.getElementById('sentHead');
   function val(id){return document.getElementById(id).value.trim()}
-  function mark(id,bad){var f=document.getElementById(id);f.classList.toggle('bad',bad);f.querySelector('input').setAttribute('aria-invalid',bad?'true':'false')}
-  form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('bad')&&e.target.value.trim())f.classList.remove('bad')});
+  function mark(id,bad){var f=document.getElementById(id);f.classList.toggle('bad',bad);var i=f.querySelector('input');i.setAttribute('aria-invalid',bad?'true':'false');if(bad)i.setAttribute('aria-describedby',f.querySelector('.err').id);else i.removeAttribute('aria-describedby')}
+  var submit=form.querySelector('button[type=submit]');
+  form.addEventListener('input',function(e){
+    var f=e.target.closest('.field');if(f&&f.classList.contains('bad')&&e.target.value.trim())mark(f.id,false);
+    // an edit after sending re-composes the message, so the send button comes back
+    if(!sent.hidden){sent.hidden=true;submit.hidden=false}
+  });
   function copy(text,done){
     function fallback(){try{var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();var ok=document.execCommand('copy');t.remove();done(ok)}catch(e){done(false)}}
     if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(function(){done(true)},fallback);else fallback();
@@ -467,7 +471,7 @@ var Contact = (function(){
     if(where)msg+=' I\'m in '+where+'.';
     pre.textContent=msg;
     document.getElementById('openBtn').href=Contact.hasPhone&&!CONFIG.TEXTS?'tel:'+CONFIG.PHONE:Contact.href(msg);
-    sent.hidden=false;
+    sent.hidden=false;submit.hidden=true;
     // Messenger may open empty, so copy the message first; the box shows it either way
     copy(msg,function(ok){
       head.textContent=ok?'Your message is copied. If Messenger opens empty, paste it in.':'Your message is ready. Copy it, then paste it into Messenger.';
@@ -484,10 +488,12 @@ var Contact = (function(){
 (function(){
   var fl=document.getElementById('float');if(!fl)return;
   if(!CONFIG.FLOAT||!('IntersectionObserver' in window)){fl.remove();return}
-  var pastHero=false,formIn=false;
-  function sync(){var on=pastHero&&!formIn;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
+  var pastHero=false,formIn=false,closeIn=false;
+  function sync(){var on=pastHero&&!formIn&&!closeIn;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
   new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('hero'));
   new IntersectionObserver(function(es){formIn=es[0].isIntersecting;sync()},{rootMargin:'-15% 0px -15% 0px'}).observe(document.getElementById('quoteForm'));
+  // the closing Message us link does the same thing, so never show both
+  new IntersectionObserver(function(es){closeIn=es[0].isIntersecting;sync()}).observe(document.querySelector('.bigmsg'));
   sync();
 })();
 
