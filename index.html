@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stefany's Cleaning Services LLC · Home cleaning in Maplewood, NJ</title>
+<meta name="description" content="Home, deep and seasonal cleaning in Maplewood, NJ. Stefany's Cleaning Services LLC takes care of the cleaning while you enjoy a cozy, welcoming home. Message us for a quote.">
+<meta name="theme-color" content="#f4f7fb">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stefany's Cleaning Services LLC · A fresh start for your Maplewood home">
+<meta property="og:description" content="Home, deep and seasonal cleaning in Maplewood, NJ. Message us for a quote.">
+<meta property="og:url" content="https://10elizabethbell.github.io/stefanysCleaningServices/">
+<meta property="og:image" content="https://10elizabethbell.github.io/stefanysCleaningServices/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap">
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  /* off-white paper, two blues from the logo's arc, the logo's leaf green as the one accent */
+  --paper:#f4f7fb;       /* page ground */
+  --card:#ffffff;
+  --field:#e6ecf5;       /* inputs and chips on the white form card */
+  --ink:#0b2a4a;         /* headings, text on green */
+  --body:#253a52;        /* running text on light */
+  --soft:#4a5b6e;        /* secondary text on light */
+  --navy:#0a5196;        /* logo blue, deepened: hero, services, close */
+  --deep:#0b2a4a;        /* fall band, footer (line texture) */
+  --on-dark:#f4f7fb;
+  --on-dark-soft:#cddcee;
+  --green:#8cc63f;       /* fills only; text on it is --ink */
+  --green-2:#a0d35a;
+  --green-ink:#3d6a10;   /* green as text on light (5.7:1) */
+  --line:rgba(11,42,74,.12);
+  --focus:#077dd4;       /* form hover/focus outline: the logo blue, distinct from the green fill */
+  --error:#b3261e;
+  --texture:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.035) 22px 23px);
+  --display:"Cal Sans","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --text:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --r-card:24px;--r-field:10px;--pill:999px;
+  --gutter:20px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--paper)}
+body{margin:0;font:16px/1.7 var(--text);color:var(--body);background:var(--paper)}
+::selection{background:var(--green);color:var(--ink)}
+img,svg{display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.on-navy :focus-visible,.on-deep :focus-visible,.hero :focus-visible,footer :focus-visible{outline-color:var(--green)}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
+h2{font-size:clamp(30px,7.6vw,48px)}
+p{margin:0}
+
+/* ---------- Bands ---------- */
+section{padding:64px 0}
+.on-paper{background:var(--paper)}
+.on-navy{background:var(--navy);color:var(--on-dark-soft)}
+.on-deep{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft)}
+.on-navy h2,.on-deep h2,.on-navy h3,.on-deep h3{color:var(--on-dark)}
+.accent{color:var(--green-ink)}
+.on-navy .accent,.on-deep .accent,.hero .accent{color:var(--green)}
+.head{display:grid;gap:16px;justify-items:start;max-width:640px}
+.lede{font-size:clamp(17px,4.6vw,19px);color:var(--soft);max-width:38ch}
+.on-navy .lede,.on-deep .lede{color:var(--on-dark-soft)}
+
+/* Eyebrow: a few key headings only. A label, not a button. */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 14px/1 var(--text);letter-spacing:.02em;color:var(--ink);background:rgba(11,42,74,.06);padding:9px 14px;border-radius:var(--pill)}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+.hero .eyebrow,.on-navy .eyebrow,.on-deep .eyebrow{color:var(--on-dark);background:rgba(255,255,255,.12)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;border-radius:var(--pill);font:400 18px/1 var(--display);text-decoration:none;cursor:pointer;border:2px solid transparent;transition:background-color .2s,color .2s,border-color .2s,transform .12s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--green);color:var(--ink);border-color:var(--green)}
+.btn-ghost{background:transparent;color:var(--on-dark);border-color:rgba(244,247,251,.7)}
+
+/* ---------- Header ---------- */
+.top{background:var(--paper);color:var(--ink)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;padding-top:max(8px,env(safe-area-inset-top))}
+.brand{display:flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;line-height:1}
+.brand img{width:54px;height:39px;flex:none}
+.brand .nm{display:flex;flex-direction:column;justify-content:center}
+.brand b{font:400 21px/1 var(--display);letter-spacing:.01em}
+.brand .nm>span{font:600 11px/1 var(--text);letter-spacing:.08em;white-space:nowrap;text-transform:uppercase;color:var(--soft);margin-top:5px}
+.tel{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 2px;font:400 17px/1 var(--display);text-decoration:none;white-space:nowrap}
+.tel svg{width:18px;height:18px;flex:none;color:var(--green-ink)}
+
+/* ---------- Hero ---------- */
+.hero{padding:0;position:relative;background-color:var(--navy);background-image:var(--texture);color:var(--on-dark);overflow:hidden}
+.logo-card.hero-logo{display:none}
+.hero-copy{position:relative;z-index:1;display:grid;gap:20px;justify-items:start;padding-top:56px;padding-bottom:68px}
+.hero h1{color:#fff;font-size:clamp(42px,12vw,80px);line-height:1.02;max-width:12ch}
+/* H1 bounce-in (after lpmr.co.uk): each letter slides in from 50px right with a slight overshoot, 20ms apart */
+.hero h1 .w{display:inline-block;white-space:nowrap}
+.hero h1 .c{display:inline-block;opacity:0;transform:translateX(50px);animation:letter-in 1s cubic-bezier(.34,1.56,.64,1) forwards;animation-delay:calc(var(--i) * 20ms)}
+@keyframes letter-in{to{opacity:1;transform:none}}
+.promise{font-size:clamp(17px,4.7vw,20px);line-height:1.5;color:var(--on-dark-soft);max-width:32ch}
+.actions{display:grid;gap:12px;width:100%;margin-top:4px}
+
+/* ---------- Care ---------- */
+.care .lede{margin-top:16px}
+.fb{margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:76px;padding:14px 16px 14px 22px;border-radius:20px;background:var(--card);color:var(--ink);text-decoration:none;font:400 clamp(18px,5vw,21px)/1.2 var(--display);max-width:460px;box-shadow:0 8px 24px rgba(11,42,74,.07)}
+.fb:hover,.fb:focus-visible{outline:none;background:var(--card)}
+.fb .lbl{display:flex;align-items:center;gap:14px}
+.fb .lbl svg{width:30px;height:30px;flex:none;color:#0866ff}
+.arrow{width:44px;height:44px;flex:none;border-radius:50%;display:grid;place-items:center;background:rgba(11,42,74,.07);color:var(--ink);transition:background-color .2s,color .2s}
+.arrow svg{width:18px;height:18px}
+.fb:focus-visible .arrow{background:var(--green);outline:3px solid var(--focus);outline-offset:3px}
+
+/* ---------- Services: each row is the link; only the arrow changes ---------- */
+.rows{list-style:none;margin:32px 0 0;padding:0;display:grid}
+.rows li+li{border-top:1px solid rgba(255,255,255,.14)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px;padding:12px 0;text-decoration:none;color:var(--on-dark);font:400 clamp(22px,6vw,28px)/1.15 var(--display)}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+.on-navy .arrow{background:rgba(255,255,255,.12);color:var(--on-dark)}
+.row:focus-visible .arrow{background:var(--green);color:var(--ink);outline:3px solid var(--green);outline-offset:3px}
+
+/* ---------- How it works ---------- */
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:24px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:48px 1fr;gap:16px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--ink);font:400 20px/1 var(--display)}
+.steps b{display:block;font:400 21px/1.2 var(--display);color:var(--on-dark);margin-top:4px}
+.steps span{display:block;margin-top:4px}
+.fall .lede{margin-top:16px}
+
+/* ---------- Form ---------- */
+.ask .wrap{display:grid;gap:28px}
+form{background:var(--card);border-radius:var(--r-card);padding:clamp(20px,5vw,32px);display:grid;gap:22px;max-width:600px;box-shadow:0 10px 30px rgba(11,42,74,.06)}
+.field{display:grid;gap:8px;min-width:0}
+.field label,.field legend{font:400 17px/1.2 var(--display);color:var(--ink);padding:0}
+.field legend{margin-bottom:8px}
+.field small{font:400 14px/1 var(--text);color:var(--soft);margin-left:4px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+input[type=text],textarea{width:100%;font:16px/1.4 var(--text);color:var(--ink);background:var(--field);border:2px solid transparent;border-radius:var(--r-field);padding:13px 14px;min-height:52px;caret-color:var(--navy);transition:border-color .15s}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:#55657a}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--focus)}
+.field.bad input[type=text]{border-color:var(--error)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+.chips label{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border-radius:var(--pill);background:var(--field);border:2px solid transparent;font:16px/1 var(--text);color:var(--ink);cursor:pointer;margin:0;transition:border-color .15s,background-color .15s,color .15s}
+.chips input:focus-visible+label{outline:3px solid var(--focus);outline-offset:3px}
+.chips input:checked+label{background:var(--ink);color:#fff}
+.err{display:none;font-size:15px;color:var(--error)}
+.field.bad .err{display:block}
+form .btn-primary{width:100%}
+form .btn-primary:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.after{font-size:15px;color:var(--soft)}
+.sent{display:grid;gap:12px;padding:16px;border-radius:16px;background:var(--field);color:var(--ink)}
+.sent b{font:400 17px/1.3 var(--display)}
+.sent pre{margin:0;white-space:pre-wrap;font:15px/1.5 var(--text);color:var(--body)}
+.sent .row2{display:flex;flex-wrap:wrap;gap:10px}
+.btn-small{min-height:48px;padding:0 20px;font-size:16px;background:var(--card);color:var(--ink);border-color:var(--ink)}
+.btn-small:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+@media (max-width:380px){.chips label{padding:0 14px}}
+
+/* ---------- Close ---------- */
+.close .wrap{display:grid;gap:28px}
+.close .who{margin-top:14px;font-size:clamp(18px,5vw,20px);color:var(--on-dark-soft);max-width:34ch}
+.logo-card{width:min(220px,58vw);aspect-ratio:1;border-radius:50%;background:#fff;display:grid;place-items:center}
+.logo-card img{width:70%;height:auto}
+.bigmsg{display:inline-flex;align-items:center;gap:12px;margin-top:24px;font:400 clamp(24px,7vw,36px)/1.1 var(--display);text-decoration:none;color:var(--on-dark);min-height:56px}
+.bigmsg svg{width:.95em;height:.95em;flex:none;color:var(--green)}
+
+/* ---------- Footer ---------- */
+footer{background-color:var(--deep);background-image:var(--texture);color:var(--on-dark-soft);padding:48px 0 calc(96px + env(safe-area-inset-bottom));font-size:16px}
+footer .wrap{display:grid;gap:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--on-dark);text-decoration:none}
+
+/* ---------- Floating message circle (one circle, never a bottom bar) ---------- */
+.float{position:fixed;z-index:15;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--ink);box-shadow:0 10px 28px rgba(5,24,46,.3);transform:translateY(120px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.float.on{transform:none}
+.float svg{width:28px;height:28px}
+.float:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:50%}
+
+/* ---------- Motion: one fade-up, only for things below the first screen ---------- */
+.js .rise{transition:opacity .4s ease-out,transform .4s ease-out}
+.js .rise.below{opacity:0;transform:translateY(12px)}
+
+/* ---------- Desktop ---------- */
+@media (min-width:760px){
+  :root{--gutter:40px}
+  .top .wrap{min-height:80px}
+  .brand img{width:64px;height:46px}
+  .brand b{font-size:24px}
+  .tel{font-size:20px}
+  section{padding:96px 0}
+  .hero-copy{padding-top:96px;padding-bottom:112px}
+  .promise{max-width:40ch}
+  .actions{grid-auto-flow:column;justify-content:start;width:auto}
+  .actions .btn{min-width:230px}
+}
+@media (min-width:1024px){
+  .logo-card.hero-logo{display:grid;position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);width:clamp(260px,26vw,340px)}
+  .care .wrap{display:grid;grid-template-columns:1.1fr 1fr;column-gap:64px;align-items:end}
+  .care .fb{margin-top:0;justify-self:end;width:100%}
+  .svc .wrap{display:grid;grid-template-columns:1fr 1.2fr;column-gap:64px;align-items:start}
+  .svc .rows{margin-top:0}
+  .ask .wrap{grid-template-columns:1fr 1.2fr;gap:64px;align-items:start}
+  .ask .head{position:sticky;top:40px}
+  .close .wrap{grid-template-columns:1fr auto;gap:48px;align-items:center}
+  .how .steps{grid-template-columns:repeat(3,1fr);gap:40px}
+  .steps b{font-size:22px}
+}
+/* hover styles only where there is a real pointer, so taps don't leave them stuck on */
+@media (hover:hover){
+.tel:hover{color:var(--green-ink)}
+.btn-primary:hover{background:var(--green-2);border-color:var(--green-2)}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.fb:hover .arrow,.row:hover .arrow{background:var(--green);color:var(--ink)}
+input[type=text]:hover,textarea:hover{border-color:var(--focus)}
+.chips label:hover{border-color:var(--focus)}
+form .btn-primary:hover,.btn-small:hover{outline:3px solid var(--focus);outline-offset:3px}
+.bigmsg:hover{color:var(--green)}
+footer a:hover{color:var(--green)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rise,.float,.btn{transition:none}
+  .js .rise.below{opacity:1;transform:none}
+  .hero h1 .c{animation:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<!--
+THESIS: A Facebook-only Maplewood cleaning business gets a calm, clean home on the web: one promise (a fresh start for your Maplewood home), the three kinds of cleaning, and one easy way to ask for a quote on Messenger.
+OWN-WORLD: The logo's own colours on the calm band system: off-white paper, logo blue deepened to #0a5196 and deep #0b2a4a (faint diagonal lines), the logo's leaf green #8cc63f as the one accent (fills only; #3d6a10 as text on light). Cal Sans display, system body 16/1.7. The logo's arc-and-tools mark in the header, the full logo on a white circle in the close.
+STORY: The visitor sees who cleans homes in Maplewood, feels the care in the owner's own seasonal words, picks the kind of cleaning, and sends a ready-written Messenger message.
+FIRST VIEWPORT: Paper header with mark + wordmark. Navy textured hero: eyebrow "Fall cleaning", H1 "A fresh start for your Maplewood home.", the owner's promise from their own ad, two pill buttons (Ask for a quote, Message us).
+FORM: calm band system without photos (no real work photos exist; the flyer's bathroom is a template image).
+-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 6 6l1.5-2.3L20 14.5V18a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M12 2.5C6.6 2.5 2.5 6.4 2.5 11.4c0 2.7 1.2 5 3.2 6.6v3.5l3.1-1.7c1 .3 2.1.4 3.2.4 5.4 0 9.5-3.9 9.5-8.8S17.4 2.5 12 2.5z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/><path d="M6.8 13.8l3.3-3.6 2.4 2.1 3.3-3.6-3.3 3.6-2.4-2.1z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v2.9h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></symbol>
+</svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Stefany's Cleaning Services LLC, back to top"><img src="img/mark.webp" alt="" width="54" height="39"><span class="nm"><b>Stefany's</b><span>Cleaning Services LLC</span></span></a>
+    <!-- filled from CONFIG.PHONE once the owner gives a number -->
+    <a class="tel" id="tel" href="#" hidden><svg aria-hidden="true"><use href="#i-phone"/></svg><span></span></a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero" aria-labelledby="h1">
+  <div class="wrap hero-copy">
+    <p class="eyebrow">Fall cleaning</p>
+    <h1 id="h1">A fresh start for your <span class="accent">Maplewood home.</span></h1>
+    <p class="promise">We take care of the cleaning while you enjoy a cozy, welcoming home all season long.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#ask">Ask for a quote</a>
+      <a class="btn btn-ghost" data-contact data-msg="Hi Stefany's Cleaning Services! I found your website and I'd like to ask about a cleaning." href="https://m.me/stefanycleaningservices" rel="noopener"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
+    </div>
+    <div class="logo-card hero-logo" aria-hidden="true"><img src="img/logo.webp" alt="" width="440" height="440"></div>
+  </div>
+</section>
+
+<section class="on-paper care" aria-labelledby="h-care">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="h-care">We clean your home like it's <span class="accent">our own.</span></h2>
+      <p class="lede">You're trusting us with the place you come home to. We give every room extra attention, so you get more comfort, freshness and peace of mind every day.</p>
+    </div>
+    <a class="fb rise" href="https://www.facebook.com/stefanycleaningservices/" rel="noopener">
+      <span class="lbl"><svg aria-hidden="true"><use href="#i-fb"/></svg>Click to see more of our work</span>
+      <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+    </a>
+  </div>
+</section>
+
+<section class="on-navy svc" id="services" aria-labelledby="h-svc">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">What we clean</p>
+      <h2 id="h-svc">Every room, <span class="accent">done with care.</span></h2>
+    </div>
+    <ul class="rows">
+      <li class="rise"><a class="row" href="#ask" data-pick="Home cleaning">Home cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-pick="Deep cleaning">Deep cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+      <li class="rise"><a class="row" href="#ask" data-pick="Seasonal cleaning">Seasonal cleaning<span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="on-deep how fall" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="h-how">Fall calls for <span class="accent">extra care.</span></h2>
+      <p class="lede">As the seasons change, give your home the fresh start it deserves.</p>
+    </div>
+    <ol class="steps">
+      <li class="rise"><div><b>Send us a message.</b><span>Tell us about your home and what it needs.</span></div></li>
+      <li class="rise"><div><b>We set a day together.</b><span>One that works around your week.</span></div></li>
+      <li class="rise"><div><b>Come home to clean.</b><span>Fresh, organized and ready to enjoy.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="on-paper ask" id="ask" aria-labelledby="h-ask">
+  <div class="wrap">
+    <div class="head rise">
+      <p class="eyebrow">Free to ask</p>
+      <h2 id="h-ask">Ask for a quote</h2>
+      <p class="lede">Big house or small apartment, tell us what you need.</p>
+    </div>
+    <form id="quoteForm" class="rise" novalidate>
+      <div class="field" id="f-name">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" maxlength="60" placeholder="First name is fine" aria-describedby="e-name">
+        <p class="err" id="e-name">Add your name so we know who's writing.</p>
+      </div>
+      <fieldset class="field">
+        <legend>What kind of cleaning? <small>(optional)</small></legend>
+        <div class="chips">
+          <input type="radio" name="kind" id="k1" value="Home cleaning"><label for="k1">Home cleaning</label>
+          <input type="radio" name="kind" id="k2" value="Deep cleaning"><label for="k2">Deep cleaning</label>
+          <input type="radio" name="kind" id="k3" value="Seasonal cleaning"><label for="k3">Seasonal cleaning</label>
+          <input type="radio" name="kind" id="k4" value="Not sure yet"><label for="k4">Not sure yet</label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="home">About your home <small>(optional)</small></label>
+        <textarea id="home" name="home" maxlength="600" placeholder="Bedrooms, bathrooms, anything that needs extra care…"></textarea>
+      </div>
+      <div class="field">
+        <label for="where">Your town <small>(optional)</small></label>
+        <input type="text" id="where" name="where" autocomplete="address-level2" maxlength="60" placeholder="e.g. Maplewood">
+      </div>
+      <button class="btn btn-primary" type="submit"><svg aria-hidden="true"><use href="#i-msg"/></svg><span id="sendLbl">Send this on Messenger</span></button>
+      <div class="sent" id="sent" role="status" hidden>
+        <b id="sentHead">Your message is ready.</b>
+        <pre id="sentMsg"></pre>
+        <div class="row2">
+          <button class="btn btn-small" type="button" id="copyBtn">Copy message</button>
+          <a class="btn btn-small" id="openBtn" href="https://m.me/stefanycleaningservices" rel="noopener">Open Messenger</a>
+        </div>
+      </div>
+      <p class="after" id="afterLine">Opens Messenger with your message written out.</p>
+    </form>
+  </div>
+</section>
+
+<section class="on-navy close" id="close" aria-labelledby="h-close">
+  <div class="wrap">
+    <div class="rise">
+      <h2 id="h-close">Stefany's Cleaning Services LLC</h2>
+      <p class="who">Home cleaning based in Maplewood, NJ. Nearby and not sure we come to you? Ask us.</p>
+      <a class="bigmsg" data-contact data-msg="Hi Stefany's Cleaning Services! I found your website and I'd like to ask about a cleaning." href="https://m.me/stefanycleaningservices" rel="noopener"><svg aria-hidden="true"><use href="#i-msg"/></svg><span>Message us</span></a>
+    </div>
+    <div class="logo-card rise"><img src="img/logo.webp" alt="Stefany's Cleaning Services LLC logo" width="440" height="440" loading="lazy"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Stefany's Cleaning Services LLC · Maplewood, NJ<span id="footTel"></span></span>
+    <nav aria-label="Contact">
+      <a href="https://www.facebook.com/stefanycleaningservices/" rel="noopener">Facebook</a>
+      <a id="footMail" hidden></a>
+    </nav>
+  </div>
+</footer>
+
+<a class="float" id="float" data-contact data-msg="Hi Stefany's Cleaning Services! I found your website and I'd like to ask about a cleaning." href="https://m.me/stefanycleaningservices" rel="noopener" aria-label="Message us"><svg aria-hidden="true"><use href="#i-msg"/></svg></a>
+
+<script>
+/* ===== Config: fill PHONE and EMAIL when the owner gives them; contact then switches from Messenger to text ===== */
+var CONFIG = {
+  PHONE: '',            // e.g. '+19735550123' (E.164). Empty = Messenger is the only channel.
+  PHONE_DISPLAY: '',    // e.g. '(973) 555-0123'
+  TEXTS: true,          // false if the number doesn't take texts (contact buttons then call)
+  EMAIL: '',            // footer only
+  MESSENGER: 'https://m.me/stefanycleaningservices',
+  FLOAT: true           // the floating message circle; false removes it
+};
+document.documentElement.classList.add('js');
+
+/* ===== Contact wiring: Messenger by default, text/call once CONFIG.PHONE is set ===== */
+var Contact = (function(){
+  var hasPhone=!!CONFIG.PHONE;
+  function href(msg){
+    if(hasPhone)return CONFIG.TEXTS?'sms:'+CONFIG.PHONE+'?&body='+encodeURIComponent(msg):'tel:'+CONFIG.PHONE;
+    return CONFIG.MESSENGER+(msg?'?text='+encodeURIComponent(msg):'');
+  }
+  [].forEach.call(document.querySelectorAll('[data-contact]'),function(a){
+    a.href=href(a.getAttribute('data-msg')||'');
+    if(hasPhone){var s=a.querySelector('span');if(s)s.textContent=CONFIG.TEXTS?'Text us':'Call us';a.setAttribute('aria-label',CONFIG.TEXTS?'Text us':'Call us')}
+  });
+  if(hasPhone){
+    var t=document.getElementById('tel');t.href='tel:'+CONFIG.PHONE;t.querySelector('span').textContent=CONFIG.PHONE_DISPLAY;t.hidden=false;
+    document.getElementById('footTel').textContent=' · '+CONFIG.PHONE_DISPLAY;
+    document.getElementById('sendLbl').textContent=CONFIG.TEXTS?'Text this to us':'Send';
+    document.getElementById('openBtn').textContent=CONFIG.TEXTS?'Open Messages':'Call us';
+    document.getElementById('afterLine').textContent='Opens your messages with this written out.';
+  }
+  if(CONFIG.EMAIL){var m=document.getElementById('footMail');m.href='mailto:'+CONFIG.EMAIL;m.textContent=CONFIG.EMAIL;m.hidden=false}
+  return {href:href,hasPhone:hasPhone};
+})();
+
+/* ===== Hero H1 bounce-in: split into letters (JS only, so no-JS and reduced motion keep the plain heading) ===== */
+(function(){
+  var h=document.getElementById('h1');
+  if(!h||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var plain=h.innerHTML,i=0,last=null;
+  h.setAttribute('aria-label',h.textContent.replace(/\s+/g,' ').trim());
+  function split(node,into){
+    [].slice.call(node.childNodes).forEach(function(n){
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(function(part){
+          if(!part)return;
+          if(/^\s+$/.test(part)){into.appendChild(document.createTextNode(' '));return}
+          var w=document.createElement('span');w.className='w';w.setAttribute('aria-hidden','true');
+          for(var k=0;k<part.length;k++){var c=document.createElement('span');c.className='c';c.style.setProperty('--i',i++);c.textContent=part[k];w.appendChild(c);last=c}
+          into.appendChild(w);
+        });
+      }else if(n.nodeType===1){var copy=n.cloneNode(false);split(n,copy);into.appendChild(copy)}
+    });
+  }
+  var frag=document.createDocumentFragment();split(h,frag);h.textContent='';h.appendChild(frag);
+  // once the last letter lands, put the plain heading back so kerning and text selection return
+  if(last)last.addEventListener('animationend',function(){h.innerHTML=plain;h.removeAttribute('aria-label')});
+})();
+
+/* ===== Service rows pre-pick their chip in the form ===== */
+(function(){
+  [].forEach.call(document.querySelectorAll('[data-pick]'),function(a){
+    a.addEventListener('click',function(){
+      var v=a.getAttribute('data-pick');
+      var r=document.querySelector('input[name=kind][value="'+v+'"]');if(r)r.checked=true;
+    });
+  });
+})();
+
+/* ===== Quote form: composes a message, opens Messenger (or texts), copy fallback ===== */
+(function(){
+  var form=document.getElementById('quoteForm');if(!form)return;
+  var sent=document.getElementById('sent'),pre=document.getElementById('sentMsg'),head=document.getElementById('sentHead');
+  function val(id){return document.getElementById(id).value.trim()}
+  function mark(id,bad){var f=document.getElementById(id);f.classList.toggle('bad',bad);f.querySelector('input').setAttribute('aria-invalid',bad?'true':'false')}
+  form.addEventListener('input',function(e){var f=e.target.closest('.field');if(f&&f.classList.contains('bad')&&e.target.value.trim())f.classList.remove('bad')});
+  function copy(text,done){
+    function fallback(){try{var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();var ok=document.execCommand('copy');t.remove();done(ok)}catch(e){done(false)}}
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(function(){done(true)},fallback);else fallback();
+  }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=val('name'),home=val('home'),where=val('where'),k=form.querySelector('input[name=kind]:checked');
+    mark('f-name',!name);
+    if(!name){document.getElementById('name').focus();return}
+    var msg='Hi Stefany\'s Cleaning Services, this is '+name+'. I\'d like a quote';
+    msg+=k&&k.value!=='Not sure yet'?' for '+k.value.toLowerCase()+'.':'.';
+    if(home)msg+=' About my home: '+home+(/[.!?]$/.test(home)?'':'.');
+    if(where)msg+=' I\'m in '+where+'.';
+    pre.textContent=msg;
+    document.getElementById('openBtn').href=Contact.hasPhone&&!CONFIG.TEXTS?'tel:'+CONFIG.PHONE:Contact.href(msg);
+    sent.hidden=false;
+    // Messenger may open empty, so copy the message first; the box shows it either way
+    copy(msg,function(ok){
+      head.textContent=ok?'Your message is copied. If Messenger opens empty, paste it in.':'Your message is ready. Copy it, then paste it into Messenger.';
+      if(Contact.hasPhone)head.textContent='Didn\'t open your messages? Here\'s your message.';
+      location.href=Contact.href(msg);
+    });
+  });
+  document.getElementById('copyBtn').addEventListener('click',function(){
+    var b=this;copy(pre.textContent,function(ok){b.textContent=ok?'Copied':'Select the text above to copy';setTimeout(function(){b.textContent='Copy message'},2500)});
+  });
+})();
+
+/* ===== Floating message circle: shows after the hero, hides while the form is on screen ===== */
+(function(){
+  var fl=document.getElementById('float');if(!fl)return;
+  if(!CONFIG.FLOAT||!('IntersectionObserver' in window)){fl.remove();return}
+  var pastHero=false,formIn=false;
+  function sync(){var on=pastHero&&!formIn;fl.classList.toggle('on',on);fl.tabIndex=on?0:-1;fl.setAttribute('aria-hidden',on?'false':'true')}
+  new IntersectionObserver(function(es){pastHero=!es[0].isIntersecting;sync()},{threshold:.15}).observe(document.getElementById('hero'));
+  new IntersectionObserver(function(es){formIn=es[0].isIntersecting;sync()},{rootMargin:'-15% 0px -15% 0px'}).observe(document.getElementById('quoteForm'));
+  sync();
+})();
+
+/* ===== Fade-up: everything is visible at rest; only what starts below the first screen rises 12px in ===== */
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove('below');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  [].forEach.call(document.querySelectorAll('.rise'),function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('below');io.observe(el)}});
+})();
+</script>
+</body>
+</html>
